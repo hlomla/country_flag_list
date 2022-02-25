@@ -4,10 +4,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="simple-grid.css">
     <title>Country Flag List</title>
 </head>
 <body>
-    <h1>Country Flag List</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1>Country Flag List</h1>
+            
+                <label for="name">Enter Country or Flag: </label>
+                <input type="text" id="name" name="name" class="text-input" value=" "><br>
+            
+                
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <button class="Add">Add</button>
+                <button class="Show">Show</button>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="showList">
+                    <ul class="list-output">
+
+                    </ul>
+                </div>
+                
+            </div>
+        </div>
+    </div> 
 </body>
+<script src="flagList-FF.js"></script>
+<script src="countryFlag.js"></script>
 </html>
