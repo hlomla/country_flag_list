@@ -4,27 +4,27 @@ function countryFlags() {
     const flags = ["🇦🇷", "🇧🇷", "🇨🇱", "🇿🇲", "🇺🇬", "🇲🇼", "🇷🇼", "🇮🇪", "🇨🇭"];
 
     function countryEntered(country) {
-        var countryList = country
+        let countryList = country.charAt(0).toUpperCase() + country.slice(1)
         if (!countries.includes(countryList))
             countries.push(countryList)
-        return countryList
+       return countries;
     }
 
-    // function enterCountry(flag) {
-    //     for (var i = 0; i < countries.length; i++) {
-    //         if (!countries[i].startsWith(flag)) {
-    //             flags.push(countryList[i])
-    //         }
-    //     }
-    //     return flags
-    // }
+    function flagInserted(flag) {
+        let flagList = flag
+        if (!flags.includes(flagList)) {
+            flags.push(flagList[i])
+            }
+        
+        return flags
+    }
 
     function getList() {
-        return countryList
+        return countries
     }
     return {
         countryEntered,
-        // enterCountry,
+        flagInserted,
         getList
     }
 }
