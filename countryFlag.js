@@ -1,11 +1,10 @@
-var countryFlagListElem = document.querySelector('.text-input')
+const countryFlagListElem = document.querySelector('.text-input')
 const addCountryElem = document.querySelector(".flag_entered");
 const addFlagElem = document.querySelector(".Add");
 const displayCountry = document.querySelector(".Show");
 const countryOutput = document.querySelector(".list_output")
 
 const countryInstance = countryFlags();
-
 
 addCountryElem.addEventListener('click', function () {
     
