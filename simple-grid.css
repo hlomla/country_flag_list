@@ -11,6 +11,12 @@ body{
     border-radius: 30px;
 }
 
+.container{
+    box-sizing: content-box;
+    width: 100%;
+    border: solid #5B6DCD 10px;
+    padding: 5px;
+}
 .flag_entered{
     background-color: rgb(144, 225, 243);
     color: black;
