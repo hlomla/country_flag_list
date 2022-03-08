@@ -32,6 +32,7 @@ addFlagElem.addEventListener('click', function(){
 displayCountry.addEventListener('click', function(){
 
     const theList = countryInstance.getList()
+    Object.freeze(theList),
             console.log(theList);
             for(let i = 0;i < theList.length; i++){
                 var list = document.createElement('li')
