@@ -37,13 +37,13 @@ function countryFlags() {
             country: "Switzerland",
             flag: "🇨🇭"
         },]
-    countries.sort(function (a, b) {
-        if (a.country < b.country) return -1
-        if(a.flag < b.flag) return -1
-        if (a.country > b.country) return 1
-        if (a.flag > b.flag) return 1
-        return 0
-    })
+        countries.sort(function (a, b) {
+            if (a.country < b.country) return -1
+            if (a.country > b.country) return 1
+            if(a.flag < b.flag) return -1
+            if (a.flag > b.flag) return 1
+            return 0
+        })
 
 
     /**
@@ -62,8 +62,8 @@ function countryFlags() {
             })
             countries.sort(function (a, b) {
                 if (a.country < b.country) return -1
-                if(a.flag < b.flag) return -1
                 if (a.country > b.country) return 1
+                if(a.flag < b.flag) return -1
                 if (a.flag > b.flag) return 1
                 return 0
             })
