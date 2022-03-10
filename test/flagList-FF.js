@@ -27,13 +27,17 @@ function countryFlags() {
     }
 
     function flagInserted(flag) {
-        let flagList = flag
-        if (!countries.includes(flagList)) {
+        let flagList = countries.filter(country=>{
+            return country.flag == flag
+        }) 
+        if (!flagList) {
             countries.push(flagList[i])
             }
     }
 
+    flag
     function getList() {
+        Object.freeze(countries)
         return countries
     }
     return {

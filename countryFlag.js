@@ -1,6 +1,6 @@
 const countryFlagListElem = document.querySelector('.text-input')
 const addCountryElem = document.querySelector(".flag_entered");
-const addFlagElem = document.querySelector(".flag_entered");
+const addFlagElem = document.querySelector(".flag-input");
 const displayCountry = document.querySelector(".Show");
 const countryOutput = document.querySelector(".list_output")
 
@@ -8,38 +8,29 @@ const countryOutput = document.querySelector(".list_output")
 
 // if (localStorage['theCountriesFlags']) {
 //     countryFlagArr = JSON.parse(localStorage.getItem('theCountriesFlags'))
-    
+
 // }
 const countryInstance = countryFlags();
 
 addCountryElem.addEventListener('click', function () {
 
+    console.log(addFlagElem.value);
     console.log(countryFlagListElem.value);
-    const theCountries = countryInstance.countryEntered(countryFlagListElem.value);
-    console.log(theCountries)
-   
-    
+    const addedCoutries = countryInstance.add(countryFlagListElem.value, addFlagElem.value)
+    console.log(addedCoutries);
+
 })
 
-addFlagElem.addEventListener('click', function(){
-    
-    console.log(countryFlagListElem.value);
-    const theFlags = countryInstance.flagInserted(countryFlagListElem.value)
-    console.log(theFlags);
-    
-})
-
-displayCountry.addEventListener('click', function(){
-
+displayCountry.addEventListener('click', function () {
     const theList = countryInstance.getList()
-    Object.freeze(theList),
-            console.log(theList);
-            for(let i = 0;i < theList.length; i++){
-                var list = document.createElement('li')
-                console.log(list);
-                list.classList.add('content')
-                list.innerHTML = theList[i].country + " " + theList[i].flag;
-                countryOutput.appendChild(list)                                                                                                                            
-            }
-        
+    console.log(theList);
+    for (let i = 0; i < theList.length; i++) {
+        var list = document.createElement('ul')
+        console.log(list);
+        list.classList.add('content')
+        list.innerHTML = theList[i].country + " " + theList[i].flag;
+        countryOutput.appendChild(list)
+    }
+
 })
+ 
