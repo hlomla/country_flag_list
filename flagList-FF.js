@@ -45,7 +45,6 @@ function countryFlags() {
             return 0
         })
 
-
     /**
      * 
      * @param {string} country 
@@ -89,7 +88,9 @@ function countryFlags() {
     }
 
     const getList = () => {
-        return countries
+        let freezedList = Object.freeze(countries)
+        console.log(freezedList + "dgdhfhf");
+        return freezedList
     }
 
     return {

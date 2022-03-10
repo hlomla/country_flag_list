@@ -24,6 +24,7 @@ addCountryElem.addEventListener('click', function () {
 displayCountry.addEventListener('click', function () {
     const theList = countryInstance.getList()
     console.log(theList);
+    countryOutput.innerHTML = ''
     for (let i = 0; i < theList.length; i++) {
         var list = document.createElement('ul')
         console.log(list);
