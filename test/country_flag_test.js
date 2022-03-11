@@ -1,31 +1,61 @@
-// describe('Country Flag List Factory Function', function () {
+describe('Country Flag List Factory Function', function () {
 
-//     describe('Return country value when user enters a country', function () {
-//         it('should be able to return country and its flag', function () {
-//             let countries = countryFlags();
+    describe('Return country value when user enters a country', function () {
+        it('should be able to return country and its flag', function () {
+            const country = countryFlags();
 
-//             countries.countryEntered('country');
-//             countries.flagInserted('flag')
+            country.add(['China', '🇨🇳']);
 
-//             let list = countries.getList(['Argentina','🇦🇷']);
+            let countryList = country.getList([{ country: 'China', flag: '🇨🇳' }]);
 
-//             assert.deepEqual(list,  {
-//                 country: 'Argentina',
-//                 flag: '🇦🇷'
-//             })
+            assert.equal(countryList, country.getList([{ country: 'China', flag: '🇨🇳' }])
+            );
+        });
+        it('should be able to return country and its flag when two countries have been entered', function () {
+            const country = countryFlags();
 
-//         });
-//         // it('should be able to return country and its flag when two countries have been entered', function () {
-//         //     let country = countryFlags();
+            country.add(['China', '🇨🇳', 'Paraguay', '🇵🇾']);
 
-//         //     country.countryEntered('country');
-//         //     country.flagInserted('flag')
+            let countryList = country.getList([{ country: 'China', flag: '🇨🇳', country: 'Paraguay', flag: '🇵🇾' }]);
 
-//         //     country.getList(['Argentina','🇦🇷'])
+            assert.equal(countryList, country.getList([{ country: 'China', flag: '🇨🇳' }, { country: 'Paraguay', flag: '🇵🇾' }])
 
-//         //     assert.deepEqual(['Argentina','🇦🇷'], country.getList(['Argentina','🇦🇷']))
+            );
+        });
+    });
+    describe('Return countries in the list alphabetically', function () {
+        it('should be able to return new list when a new country is added to the existing list', function () {
+            const country = countryFlags();
 
-//         // });
-//     });
-// })
+            let countryList = country.getList();
 
+            country.add('China', '🇨🇳');
+            
+            assert.equal(countryList.length, 10);
+        });
+        it('should be able to return new list when two new country is added to the existing list', function () {
+            
+            const country = countryFlags();
+
+            let countryList = country.getList();
+
+            country.add('England', '🏴󠁧󠁢󠁥󠁮󠁧󠁿');
+            
+            assert.equal(countryList.length, 10);
+            country.add('Paraguay', '🇵🇾');
+            assert.equal(countryList.length, 11);
+        });
+        it('should not be add a country to the existing list if already added', function () {
+            
+            const country = countryFlags();
+
+            let countryList = country.getList();
+
+            country.add('England', '🏴󠁧󠁢󠁥󠁮󠁧󠁿');
+            
+            assert.equal(countryList.length, 10);
+            country.add('England', '🏴󠁧󠁢󠁥󠁮󠁧󠁿');
+            assert.equal(countryList.length, 10);
+        });
+    });
+});

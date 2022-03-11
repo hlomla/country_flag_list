@@ -4,12 +4,12 @@ const addFlagElem = document.querySelector(".flag-input");
 const displayCountry = document.querySelector(".Show");
 const countryOutput = document.querySelector(".list_output")
 
-// const countryFlagArr;
+var countryFlagArr;
 
-// if (localStorage['theCountriesFlags']) {
-//     countryFlagArr = JSON.parse(localStorage.getItem('theCountriesFlags'))
+if (localStorage['theCountriesFlags']) {
+    countryFlagArr = JSON.parse(localStorage.getItem('theCountriesFlags'))
 
-// }
+}
 const countryInstance = countryFlags();
 
 addCountryElem.addEventListener('click', function () {
