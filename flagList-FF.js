@@ -72,27 +72,17 @@ function countryFlags() {
         return false
     }
 
-    // const countryEntered = (country) => {
-    // //     let countryList = country.charAt(0).toUpperCase() + country.slice(1)
-    //     if (!countries.includes(countryList))
-    //         countries.push(countryList)
-    // };
-
-    // const flagInserted = (flag) => {
-    //     let flagList = countries.filter(country => {
-    //         return country.flag == flag
-    //     })
-    //     if (!flagList) {
-    //         countries.push(flagList[i])
-    //     }
-    // }
-
     const getList = () => {
 
         return countries
     }
+    // const filtered = (flagList) => {
+    //     if(flagList.startsWith()) 
+    //     return flagList.value
+    // }
 
     return {
+        // filtered,
         getList,
         add
     }

@@ -3,6 +3,7 @@ const addCountryElem = document.querySelector(".flag_entered");
 const addFlagElem = document.querySelector(".flag-input");
 const displayCountry = document.querySelector(".Show");
 const countryOutput = document.querySelector(".list_output")
+const filterOutput = document.getElementById("Sname")
 
 var countryFlagArr;
 
@@ -33,5 +34,18 @@ displayCountry.addEventListener('click', function () {
         countryOutput.appendChild(list)
     }
 
+})
+
+filterOutput.addEventListener('click', function(filtered){
+    let theList = countryInstance.getList()
+    if(filtered.target.value){
+        filteredList = theList.filter(function(names)
+        {
+            console.log(names + "ghlhkjlj");
+            return names.country.startsWith(filtered.target.value)
+        })
+    }
+
+    
 })
  
